@@ -14,11 +14,14 @@
       {
         packages.default = pkgs.buildGoModule rec {
           pname = "podman-mcp-server";
-          version = "0.0.12";
+          version = "0.0.15";
 
           src = ./.;
 
-          vendorHash = "sha256-uo+cksVsxZMWZbUoNaNy7aSZogVB64Lp1gkw5vbVmls=";
+          vendorHash = "sha256-At/1tK/nJUl8ljwU/ToGK/GOwJ3KahEuSdZO3/SlONM=";
+
+          nativeBuildInputs = [ pkgs.pkg-config ];
+          buildInputs = [ pkgs.gpgme ];
 
           subPackages = [ "cmd/podman-mcp-server" ];
 
